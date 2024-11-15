@@ -30,7 +30,7 @@ app.use(express.urlencoded({ limit: 5242, extended: true })); // 5MB
 
 app.use(cookieParser());
 
-console.log("********Request came through");
+console.log("******Request came through");
 
 app.use(
 	cors({
