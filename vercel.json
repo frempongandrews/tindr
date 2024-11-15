@@ -1,10 +1,5 @@
 {
 	"version": 2,
-	"buildCommand": "npm run build",
-	"outputDirectory": "client/dist",
-	"functions": {
-		"api/server.js": {
-			"runtime": "nodejs14.x"
-		}
-	}
+	"builds": [{ "src": "./api/server.js", "use": "@vercel/node" }],
+	"routes": [{ "src": "/(.*)", "dest": "./api/server.js" }]
 }
