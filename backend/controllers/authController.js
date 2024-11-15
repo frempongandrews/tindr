@@ -11,6 +11,8 @@ const signToken = (id) => {
 export const signup = async (req, res) => {
 	const { name, email, age, gender, genderPreference, password } = req.body;
 
+	// TODO: Check if user exists
+
 	try {
 		if (!name || !email || !password || !age || !gender || !genderPreference) {
 			return res.status(400).json({
