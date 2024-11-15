@@ -1,8 +1,4 @@
 {
 	"buildCommand": "npm run build",
-	"postInstallCommand": "cd api && node server.js",
-	"outputDirectory": "client/dist",
-	"server": {
-		"command": "node api/server.js"
-	}
+	"outputDirectory": "client/dist"
 }
