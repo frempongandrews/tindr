@@ -25,8 +25,8 @@ const __dirname = path.resolve();
 initializeSocket(httpServer);
 
 // TODO: reduce file size to 5mb
-app.use(express.json({ limit: 52428800 })); // 50MB
-app.use(express.urlencoded({ limit: 52428800, extended: true })); // 50MB
+app.use(express.json({ limit: 5242 })); // 5MB
+app.use(express.urlencoded({ limit: 5242, extended: true })); // 5MB
 
 app.use(cookieParser());
 app.use(
