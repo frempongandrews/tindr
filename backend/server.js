@@ -30,14 +30,25 @@ app.use(express.urlencoded({ limit: 52428800, extended: true })); // 5MB
 
 app.use(cookieParser());
 
-console.log("******Request came through");
+var whitelist = [
+	"http://localhost:3000",
+	"http://localhost:5173",
+	process.env.CLIENT_URL,
+];
+var corsOptionsDelegate = function (req, callback) {
+	var corsOptions;
+	if (whitelist.indexOf(req.header("Origin")) !== -1) {
+		corsOptions = { origin: true, credentials: true }; // reflect (enable) the requested origin in the CORS response
+	} else {
+		corsOptions = { origin: false };
+		// disable CORS for this request
+	}
+	callback(null, corsOptions); // callback expects two parameters: error and options
+};
 
-app.use(
-	cors({
-		origin: process.env.CLIENT_URL,
-		credentials: true,
-	})
-);
+const corsMiddleware = cors(corsOptionsDelegate);
+
+app.use(corsMiddleware);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
