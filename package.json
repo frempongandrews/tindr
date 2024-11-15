@@ -4,10 +4,10 @@
 	"description": "A tinder clone",
 	"main": "index.js",
 	"scripts": {
-		"dev:server": "nodemon apis/server.js",
+		"dev:server": "nodemon backend/server.js",
 		"dev:client": "npm run dev --prefix client",
 		"build": "npm install && npm install --prefix client && npm run build --prefix client",
-		"start": "node apis/server.js"
+		"start": "node backend/server.js"
 	},
 	"keywords": [],
 	"author": "",
