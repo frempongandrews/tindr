@@ -1,9 +1,9 @@
 {
 	"buildCommand": "npm run build",
 	"outputDirectory": "client/dist",
-	"functions": [
-		{
-			"src": "api/server.js"
+	"functions": {
+		"api/server.js": {
+			"runtime": "nodejs20.x"
 		}
-	]
+	}
 }
