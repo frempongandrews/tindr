@@ -29,6 +29,9 @@ app.use(express.json({ limit: 5242 })); // 5MB
 app.use(express.urlencoded({ limit: 5242, extended: true })); // 5MB
 
 app.use(cookieParser());
+
+console.log("**********Request came through");
+
 app.use(
 	cors({
 		origin: process.env.CLIENT_URL,
