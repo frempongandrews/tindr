@@ -71,7 +71,8 @@ const generateRandomUser = (gender, index) => {
 	return {
 		name,
 		email: `${name.toLowerCase()}${age}@example.com`,
-		password: bcrypt.hashSync("password123", 10),
+		// TODO: hash password
+		// password: bcrypt.hashSync("password123", 10),
 		age,
 		gender,
 		genderPreference:
